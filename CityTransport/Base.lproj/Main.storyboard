@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XyF-Tm-fxg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Список остановок-->
+        <scene sceneID="1kJ-CK-Tyi">
+            <objects>
+                <tableViewController id="QuG-31-xPm" customClass="TableListStopsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HXK-O1-qTa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellStops" id="bjg-nC-so2" customClass="TableListStopsViewCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bjg-nC-so2" id="C5g-EH-g0J">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name stops:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Te-g6-B9i">
+                                            <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4Te-g6-B9i" firstAttribute="bottom" secondItem="C5g-EH-g0J" secondAttribute="bottomMargin" id="anK-r3-WWk"/>
+                                        <constraint firstItem="4Te-g6-B9i" firstAttribute="top" secondItem="C5g-EH-g0J" secondAttribute="topMargin" id="hRo-bX-uFq"/>
+                                        <constraint firstItem="4Te-g6-B9i" firstAttribute="trailing" secondItem="C5g-EH-g0J" secondAttribute="trailingMargin" id="nPF-7v-iqr"/>
+                                        <constraint firstItem="4Te-g6-B9i" firstAttribute="leading" secondItem="C5g-EH-g0J" secondAttribute="leadingMargin" id="uhU-me-WrC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameStops" destination="4Te-g6-B9i" id="d0N-uU-klr"/>
+                                    <segue destination="9Ct-xO-g3N" kind="show" identifier="UpdateDevice" id="yiY-8I-5ge"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QuG-31-xPm" id="pdF-Q6-dJL"/>
+                            <outlet property="delegate" destination="QuG-31-xPm" id="5St-qT-jeq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Список остановок" id="TD6-1k-8aT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcO-IJ-yb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="226"/>
+        </scene>
+        <!--Список маршрутов текущей остановки-->
+        <scene sceneID="Wj6-gP-8Er">
+            <objects>
+                <tableViewController id="9Ct-xO-g3N" customClass="TableListStopRoute" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="8qt-Y1-o4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellStopRoute" rowHeight="60" id="0tc-52-mW0" customClass="TableListStopRouteCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0tc-52-mW0" id="C8h-jQ-6bL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="№" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tel-Jo-eHc">
+                                            <rect key="frame" x="8" y="8" width="23" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="23" id="QMc-6i-I7Q"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name stop route" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egU-l5-Jf3">
+                                            <rect key="frame" x="39" y="11" width="553" height="40"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Tel-Jo-eHc" firstAttribute="top" secondItem="C8h-jQ-6bL" secondAttribute="topMargin" id="AUr-ZZ-Azj"/>
+                                        <constraint firstItem="egU-l5-Jf3" firstAttribute="bottom" secondItem="C8h-jQ-6bL" secondAttribute="bottomMargin" id="BdQ-OE-8QD"/>
+                                        <constraint firstItem="egU-l5-Jf3" firstAttribute="baseline" secondItem="Tel-Jo-eHc" secondAttribute="baseline" id="FrQ-O9-QMS"/>
+                                        <constraint firstItem="egU-l5-Jf3" firstAttribute="trailing" secondItem="C8h-jQ-6bL" secondAttribute="trailingMargin" id="MbS-oI-MSf"/>
+                                        <constraint firstItem="egU-l5-Jf3" firstAttribute="top" secondItem="C8h-jQ-6bL" secondAttribute="topMargin" constant="3" id="cyX-2h-qsM"/>
+                                        <constraint firstItem="Tel-Jo-eHc" firstAttribute="leading" secondItem="C8h-jQ-6bL" secondAttribute="leadingMargin" id="iUi-ka-6pz"/>
+                                        <constraint firstItem="egU-l5-Jf3" firstAttribute="leading" secondItem="Tel-Jo-eHc" secondAttribute="trailing" constant="8" symbolic="YES" id="o9K-gZ-07k"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameStopRoute" destination="egU-l5-Jf3" id="rkz-eT-ke0"/>
+                                    <outlet property="numberShort" destination="Tel-Jo-eHc" id="39c-xB-GCQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Ct-xO-g3N" id="1WX-18-pKN"/>
+                            <outlet property="delegate" destination="9Ct-xO-g3N" id="l0I-5q-UIX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Список маршрутов текущей остановки" id="MlX-UX-IWv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBe-rb-9t8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="226"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MXD-uY-dTn">
+            <objects>
+                <navigationController id="XyF-Tm-fxg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOn-CZ-wcW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QuG-31-xPm" kind="relationship" relationship="rootViewController" id="IOp-P3-ZoE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wt2-E5-gWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265" y="226"/>
+        </scene>
+    </scenes>
+</document>
